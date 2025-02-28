@@ -1,0 +1,378 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="Smarthr - Bootstrap Admin Template">
+	<meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Maatrom </title>
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://smarthr.dreamstechnologies.com/html/template/assets/css/bootstrap.min.css">
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="https://smarthr.dreamstechnologies.com/html/template/assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="https://smarthr.dreamstechnologies.com/html/template/assets/plugins/fontawesome/css/all.min.css">
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" href="https://smarthr.dreamstechnologies.com/html/template/assets/css/dataTables.bootstrap5.min.css">
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="https://smarthr.dreamstechnologies.com/html/template/assets/css/style.css">
+</head>
+    <style>
+        .date-box {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            margin: 2px;
+            font-size: 14px;
+            font-weight: bold;
+			user-select: none; /* Prevent text selection */			
+        }
+        .today {
+            background-color: #007bff !important;
+            color: white !important;
+        }
+    </style>
+<body>
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+		<!-- Header -->
+		<div class="header">
+			<div class="main-header">
+				<div class="header-left">
+					<a href="https://smarthr.dreamstechnologies.com/html/template/index.html" class="logo">
+						<img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+					</a>
+					<a href="https://smarthr.dreamstechnologies.com/html/template/index.html" class="dark-logo">
+						<img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+					</a>
+				</div>
+
+				<a id="mobile_btn" class="mobile_btn" href="#sidebar">
+					<span class="bar-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</a>
+
+				<div class="header-user">
+					<div class="nav user-menu nav-list">
+						<div class="me-auto d-flex align-items-center" id="header-search">
+							<a id="toggle_btn" href="javascript:void(0);" class="btn btn-menubar me-1">
+								<i class="ti ti-arrow-bar-to-left"></i>
+							</a>
+							<!-- Search -->
+							<div class="input-group input-group-flat d-inline-flex me-1">
+								<span class="input-icon-addon">
+									<i class="ti ti-search"></i>
+								</span>
+								<input type="text" class="form-control" placeholder="Search in HRMS">
+								<span class="input-group-text">
+									<kbd>CTRL + / </kbd>
+								</span>
+							</div>
+							<!-- /Search -->
+							<div class="dropdown crm-dropdown">
+								<a href="#" class="btn btn-menubar me-1" data-bs-toggle="dropdown">
+									<i class="ti ti-layout-grid"></i>
+								</a>
+								<div class="dropdown-menu dropdown-lg dropdown-menu-start">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Header -->
+
+		<!-- Sidebar -->
+		<div class="sidebar" id="sidebar">
+			<!-- Logo -->
+			<div class="sidebar-logo">
+				<a href="https://smarthr.dreamstechnologies.com/html/template/index.html"  class="logo logo-normal">
+					<img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+				</a>
+				<a href="https://smarthr.dreamstechnologies.com/html/template/index.html" class="logo-small">
+					<img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+				</a>
+				<a href="https://smarthr.dreamstechnologies.com/html/template/index.html" class="dark-logo">
+					<img src="{% static 'assets/img/logo.png' %}" alt="Logo">
+				</a>
+			</div>
+			<!-- /Logo -->
+
+			<div class="sidebar-inner slimscroll">
+				<div id="sidebar-menu" class="sidebar-menu">
+					<ul><br><br>
+						<li class="menu-title"><span>MAIN MENU</span></li>
+						<li>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-layout-grid-add"></i><span>Applications</span>
+										<span class="menu-arrow"></span>
+									</a>
+									<ul>
+
+										<li><a href="#">Calendar</a></li>
+									</ul>
+								</li>	
+				</div>
+			</div>
+		</div>
+		<!-- /Sidebar -->
+		<!-- Page Wrapper -->
+		<div class="page-wrapper">
+			<div class="content">
+				<!-- Breadcrumb -->
+				<div class="d-md-flex d-block align-items-center justify-content-between page-breadcrumb mb-3">
+					<div class="my-auto mb-2">
+						<h2 class="mb-1">Scheduler</h2>
+						<nav>
+							<ol class="breadcrumb mb-0">
+								<li class="breadcrumb-item">
+									<a href="https://smarthr.dreamstechnologies.com/html/template/index.html"><i class="ti ti-smart-home"></i></a>
+								</li>
+								<li class="breadcrumb-item">
+									App
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Calender</li>
+							</ol>
+						</nav>
+					</div>
+
+				</div>
+				<!-- /Breadcrumb -->
+
+<!-- Leads List -->
+<div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
+        <h5>Contact List</h5>
+    </div>
+    <div class="card-body p-0">
+        <div class="custom-datatable-filter table-responsive">
+            <table class="table datatable">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Rating</th>
+                        <th id="daysHeader" class="text-center"></th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="pipelineTableBody">
+                    <tr>
+                        <td><h6 class="fs-14 fw-medium">Karthick</h6></td>
+                        <td>8682884814</td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="progress me-2" role="progressbar" style="height: 5px; min-width: 80px;">
+                                    <div class="progress-bar bg-success" style="width: 50%"></div>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td class="week-dates text-center"></td>
+                        <td><span class="badge badge-success">Active</span></td>
+                        <td>
+                            <div class="action-icon d-inline-flex">
+                                <a href="#" class="me-2"><i class="ti ti-edit"></i></a>
+                                <a href="#"><i class="ti ti-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Bottom Navigation for Month Change -->
+            <div class="text-center mt-3">
+                <button id="prevWeek" class="btn btn-outline-primary">&lt;</button>
+                <span id="currentMonth" class="mx-2 fw-bold"></span>
+                <button id="nextWeek" class="btn btn-outline-primary">&gt;</button>
+            </div><br>
+            
+            <!-- Save and Cancel Buttons -->
+            <div class="text-center">			
+                <button id="saveAvailability" class="btn btn-success">Save</button>
+                <button id="cancelSelection" class="btn btn-danger">Cancel</button>
+            </div>
+        </div> <br>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const prevWeekBtn = document.getElementById("prevWeek");
+    const nextWeekBtn = document.getElementById("nextWeek");
+    const monthLabel = document.getElementById("currentMonth");
+    const daysHeader = document.getElementById("daysHeader");
+    const weekDateElements = document.querySelectorAll(".week-dates");
+    const saveBtn = document.getElementById("saveAvailability");
+
+    let startOfWeek = getStartOfWeek(new Date());
+
+    function getStartOfWeek(date) {
+        let day = date.getDay();
+        let diff = date.getDate() - day + (day === 0 ? -6 : 1); // Start from Monday
+        return new Date(date.setDate(diff));
+    }
+
+    function updateMonth() {
+        let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        monthLabel.textContent = `${monthNames[startOfWeek.getMonth()]}/${startOfWeek.getFullYear().toString().slice(-2)}`;
+        updateDaysHeader();
+        updateWeek();
+    }
+
+    function updateDaysHeader() {
+        const dayLetters = ["S", "M", "T", "W", "T", "F", "S"];
+        daysHeader.innerHTML = dayLetters.map(day => `<span style="margin: 0 12px;">${day}</span>`).join("");
+    }
+
+    function updateWeek() {
+        let today = new Date();
+        let weekDatesHtml = "";
+
+        for (let i = 0; i < 7; i++) {
+            let day = new Date(startOfWeek);
+            day.setDate(startOfWeek.getDate() + i);
+            let isToday = today.toDateString() === day.toDateString();
+
+            weekDatesHtml += `<span class="date-box ${isToday ? 'today' : ''}" 
+                data-status="none" 
+                data-date="${day.toISOString().split('T')[0]}" 
+                style="padding: 5px; display: inline-block; width: 30px; text-align: center; background-color: #f8f9fa; cursor: pointer;">
+                ${day.getDate()}
+            </span>`;
+        }
+
+        weekDateElements.forEach(el => {
+            el.innerHTML = weekDatesHtml;
+        });
+
+        attachClickEvent(); // Reattach events after rendering
+        fetchSavedAvailability();
+    }
+
+    function attachClickEvent() {
+        console.log("Attaching click events to date boxes...");
+        document.querySelectorAll(".date-box").forEach(dateBox => {
+            dateBox.addEventListener("click", function () {
+                let status = this.getAttribute("data-status");
+                if (status === "none") {
+                    this.style.backgroundColor = "red";
+                    this.setAttribute("data-status", "unavailable");
+                } else if (status === "unavailable") {
+                    this.style.backgroundColor = "yellow";
+                    this.setAttribute("data-status", "booked");
+                } else if (status === "booked") {
+                    this.style.backgroundColor = "green";
+                    this.setAttribute("data-status", "available");
+                } else {
+                    this.style.backgroundColor = "#f8f9fa";
+                    this.setAttribute("data-status", "none");
+                }
+            });
+        });
+    }
+
+    function fetchSavedAvailability() {
+        fetch(getAvailabilityURL)
+            .then(response => response.json())
+            .then(data => {
+                console.log("Fetched Availability:", data);
+                document.querySelectorAll(".date-box").forEach(dateBox => {
+                    let date = dateBox.getAttribute("data-date");
+                    let savedEntry = data.find(entry => entry.date === date);
+                    if (savedEntry) {
+                        dateBox.setAttribute("data-status", savedEntry.status);
+                        dateBox.style.backgroundColor = savedEntry.color;
+                    }
+                });
+            })
+            .catch(error => console.error("Error fetching data:", error));
+    }
+
+    prevWeekBtn.addEventListener("click", function () {
+        startOfWeek.setDate(startOfWeek.getDate() - 7);
+        updateMonth();
+    });
+
+    nextWeekBtn.addEventListener("click", function () {
+        startOfWeek.setDate(startOfWeek.getDate() + 7);
+        updateMonth();
+    });
+
+    saveBtn.addEventListener("click", function () {
+        let selectedDates = [];
+        document.querySelectorAll(".date-box").forEach(dateBox => {
+            let status = dateBox.getAttribute("data-status");
+            let date = dateBox.getAttribute("data-date");
+            let color = dateBox.style.backgroundColor;
+
+            if (status !== "none") {
+                selectedDates.push({ date: date, status: status, color: color });
+            }
+        });
+
+        if (selectedDates.length > 0) {
+            fetch(saveAvailabilityURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": getCSRFToken()
+                },
+                body: JSON.stringify({ dates: selectedDates })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Data saved successfully!");
+                    fetchSavedAvailability(); // Refresh the availability display
+                } else {
+                    alert("Error: " + data.error);
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        } else {
+            alert("No changes made.");
+        }
+    });
+
+    function getCSRFToken() {
+        return document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+    }
+
+    updateMonth();
+});
+</script>
+
+
+	<!-- jQuery -->
+	<script data-cfasync="false" src="https://smarthr.dreamstechnologies.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+	</script><script src="https://smarthr.dreamstechnologies.com/html/template/assets/js/jquery-3.7.1.min.js" type="e3f9b5401de5be0ff6c758b9-text/javascript"></script>
+	<!-- Bootstrap Core JS -->
+	<script src="https://smarthr.dreamstechnologies.com/html/template/assets/js/bootstrap.bundle.min.js" type="e3f9b5401de5be0ff6c758b9-text/javascript"></script>
+	<!-- Feather Icon JS -->
+	<script src="https://smarthr.dreamstechnologies.com/html/template/assets/js/feather.min.js" type="e3f9b5401de5be0ff6c758b9-text/javascript"></script>
+	<!-- Slimscroll JS -->
+	<script src="https://smarthr.dreamstechnologies.com/html/template/assets/js/jquery.slimscroll.min.js" type="e3f9b5401de5be0ff6c758b9-text/javascript"></script>
+	<!-- Datatable JS -->
+	<script src="https://smarthr.dreamstechnologies.com/html/template/assets/js/jquery.dataTables.min.js" type="e3f9b5401de5be0ff6c758b9-text/javascript"></script>
+	<script src="https://smarthr.dreamstechnologies.com/html/template/assets/js/dataTables.bootstrap5.min.js" type="e3f9b5401de5be0ff6c758b9-text/javascript"></script>	
+	<!-- Custom JS -->
+	<script src="https://smarthr.dreamstechnologies.com/html/template/assets/js/theme-colorpicker.js" type="e3f9b5401de5be0ff6c758b9-text/javascript"></script>
+	<script src="https://smarthr.dreamstechnologies.com/html/template/assets/js/script.js" type="e3f9b5401de5be0ff6c758b9-text/javascript"></script>
+	<script src="https://smarthr.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="e3f9b5401de5be0ff6c758b9-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9180b87d9d05ff72","version":"2025.1.0","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"3ca157e612a14eccbb30cf6db6691c29","b":1}' crossorigin="anonymous"></script>
+</body>
+</html>
