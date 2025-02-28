@@ -1,16 +1,12 @@
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import Slot
+from .models import Slot,Availability
 import json
 
 def home(request):
     slots = Slot.objects.all()
     return render(request, "slot.html", {"slots": slots})
-
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-import json
-from .models import Availability
 
 @csrf_exempt
 def save_availability(request):
@@ -21,7 +17,6 @@ def save_availability(request):
             status = entry["status"]
             color = entry["color"]
 
-            # Save or update the entry in the database
             availability, created = Availability.objects.update_or_create(
                 date=date,
                 defaults={"status": status, "color": color}
